@@ -1,0 +1,72 @@
+<!doctype HTML>
+<html>
+<head>
+<script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.5.0/aframe/build/aframe-ar.js"> </script>
+<script type="text/javascript">
+// 'use strict';
+//
+// var constraints = {
+//   video: true
+// };
+//
+// var video = document.querySelector('video');
+//
+// function handleSuccess(stream) {
+//   window.stream = stream; // only to make stream available to console
+//   video.srcObject = stream;
+// }
+//
+// function handleError(error) {
+//   console.log('getUserMedia error: ', error);
+// }
+//
+// navigator.mediaDevices.getUserMedia(constraints).
+//   then(()=> console.log('worked')).catch();
+
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(function(stream) {
+    var videoTracks = stream.getVideoTracks();
+    console.log('Got stream with constraints:', constraints);
+    console.log('Using video device: ' + videoTracks[0].label);
+    stream.onended = function() {
+      console.log('Stream ended');
+    };
+    window.stream = stream; // make variable available to console
+    video.srcObject = stream;
+  })
+  .catch(function(error) {
+    // ...
+  }
+</script>
+
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+
+      <!-- <a-text value="Now Interactable" geometry="primitive:plane"></a-text> -->
+      <!-- <a-text value="hi WDI35" position="-0.5 0 0" rotation="-90 0 0" color="yellow"></a-text>
+      <a-box color="tomato" position="0 -1 0" depth="0.5" height="1" width="1.5" opacity="1"></a-box> -->
+
+
+<!-- <h1>hi</h1> -->
+
+      <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
+  <a-assets>
+      <a-asset-item id="taj" src="scene.gltf"></a-asset-item>
+  </a-assets>
+  <a-marker preset="hiro">
+    <a-entity scale="0.08 0.08 0.08">
+      <a-entity mmd='outline: true' afterglow:2.0;>
+        <a-entity scale="0.1 0.1 0.1" gltf-model="#taj"></a-entity>
+      </a-entity>
+    </a-entity>
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+
+
+      <!-- <a-box position='0 0.5 0' material='color: black;'></a-box> -->
+      <!-- <a-image position='0 2 0'src="https://pbs.twimg.com/profile_images/944609203397758976/9nagXxdM_400x400.jpg"></a-image> -->
+
+</body>
+</html>
