@@ -7,7 +7,7 @@
 </head>
 <body style='margin : 0px; overflow: hidden;'>
 
-  <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
+  <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
     <a-assets>
       <a-asset-item id="taj" src="models/taj/scene.gltf"></a-asset-item>
       <a-asset-item id="petra" src="models/petra/scene.gltf"></a-asset-item>
@@ -27,7 +27,7 @@
         </a-entity>
       </a-entity>
     </a-marker>
-    <a-marker type='pattern' patternUrl='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt' url='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt'>
+    <a-marker type='barcode' value='5'>
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
           <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#christ"></a-entity>
