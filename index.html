@@ -9,25 +9,35 @@
 
   <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
     <a-assets>
-      <a-asset-item id="wonder" src=""></a-asset-item>
+      <a-asset-item id="taj" src="models/taj/scene.gltf"></a-asset-item>
     </a-assets>
     <a-marker preset="hiro">
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
-          <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#wonder"></a-entity>
+          <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#taj"></a-entity>
         </a-entity>
       </a-entity>
     </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
 
+  <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
+    <a-assets>
+      <a-asset-item id="petra" src="models/petra/scene.gltf"></a-asset-item>
+    </a-assets>
     <a-marker preset="kanji">
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
-          <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#wonder"></a-entity>
+          <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#petra"></a-entity>
         </a-entity>
       </a-entity>
     </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
 
-    <a-marker type='pattern' patternUrl='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt' url='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt>
+
+
+    <a-marker type='pattern' patternUrl='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt' url='https://raw.githubusercontent.com/karannavani/ar-test/master/pattern-one.patt'>
     <!-- <a-marker preset="kanji"> -->
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
@@ -37,8 +47,7 @@
     <!-- </a-marker> -->
     </a-marker>
 
-    <a-entity camera></a-entity>
-  </a-scene>
+
 
 
   <!-- <a-box position='0 0.5 0' material='color: black;'></a-box> -->
