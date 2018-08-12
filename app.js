@@ -36,4 +36,3 @@ function handleResponse() {
 req.open(verb, `${domain}${endPoint}/5b6f7dc2e539884511a85beb`); // GA
 req.onreadystatechange = handleResponse;
 req.send();
-console.log('req is',req);
