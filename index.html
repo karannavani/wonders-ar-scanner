@@ -8,18 +8,35 @@
 <body style='margin : 0px; overflow: hidden;'>
 
   <a-scene arjs='detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-    <a-assets>
+    <!-- <a-assets>
       <a-asset-item id="taj" src="models/taj/scene.gltf"></a-asset-item>
       <a-asset-item id="petra" src="models/petra/scene.gltf"></a-asset-item>
       <a-asset-item id="christ" src="models/christ/scene.gltf"></a-asset-item>
-    </a-assets>
-    <a-marker preset="hiro">
+    </a-assets> -->
+
+    <!-- create your content here. just a box for now -->
+    <a-box color="red" position='0 0.5 0' material='opacity: 0.5;'></a-box>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker preset='hiro'></a-marker>
+
+    <a-marker type='barcode' value='7'>
+      <a-box position='0 0.5 0' material='color: blue;'></a-box>
+    </a-marker>
+
+  </a-scene>
+
+
+
+    <!-- OLD -->
+
+    <!-- <a-marker preset="hiro">
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
           <a-entity rotation="-90 0 0" scale="0.1 0.1 0.1" gltf-model="#taj"></a-entity>
         </a-entity>
       </a-entity>
     </a-marker>
+
     <a-marker preset="kanji">
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
@@ -27,13 +44,7 @@
         </a-entity>
       </a-entity>
     </a-marker>
-    <!-- <a-marker preset='custom' type='pattern' url='pattern-marker.patt'>
-      <a-entity scale="0.08 0.08 0.08">
-        <a-entity mmd='outline: true' afterglow:2.0;>
-          <a-entity rotation="-90 0 0" scale="2 2 2" gltf-model="#christ"></a-entity>
-        </a-entity>
-      </a-entity>
-    </a-marker> -->
+
     <a-marker preset='area' type='barcode' value="5">
       <a-entity scale="0.08 0.08 0.08">
         <a-entity mmd='outline: true' afterglow:2.0;>
@@ -42,7 +53,11 @@
       </a-entity>
     </a-marker>
     <a-entity camera></a-entity>
-  </a-scene>
+  </a-scene> -->
+
+
+ <!-- OLDER -->
+
 
   <!-- <a-scene  embedded artoolkit='sourceType: webcam; sourceWidth: 240; sourceHeight: 180;' antialias="true" outline>
     <a-assets>
