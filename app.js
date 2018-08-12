@@ -12,27 +12,27 @@ navigator.mediaDevices.getUserMedia(constraints)
     window.stream = stream; // make variable available to console
   });
 
-// const verb = 'GET';
-// const domain = 'http://localhost:4000/api';
-// const endPoint = '/wonders';
-// const req = new XMLHttpRequest();
-//
-//
-//
-// function handleResponse() {
-//   const readyState = this.readyState;
-//   const status = this.status;
-//   const res = JSON.parse(this.responseText);
-//   console.log('wat');
-//
-//   if (readyState === 4 && status === 200) {
-//     console.log('res is',res.model);
-//     console.log('wonder div is', document.querySelector('#wonder'));
-//     document.querySelector('#wonder').setAttribute('src', res.model);
-//     console.log('setting src dynamically');
-//   }
-// }
-//
-// req.open(verb, `${domain}${endPoint}/5b6f7dc2e539884511a85beb`); // GA
-// req.onreadystatechange = handleResponse;
-// req.send();
+const verb = 'GET';
+const domain = 'http://localhost:4000/api';
+const endPoint = '/wonders';
+const req = new XMLHttpRequest();
+
+
+
+function handleResponse() {
+  const readyState = this.readyState;
+  const status = this.status;
+  const res = JSON.parse(this.responseText);
+  console.log('wat');
+
+  if (readyState === 4 && status === 200) {
+    console.log('res is',res.model);
+    console.log('wonder div is', document.querySelector('#wonder'));
+    document.querySelector('#wonder').setAttribute('src', res.model);
+    console.log('setting src dynamically');
+  }
+}
+
+req.open(verb, `${domain}${endPoint}/5b6f7dc2e539884511a85beb`); // GA
+req.onreadystatechange = handleResponse;
+req.send();
