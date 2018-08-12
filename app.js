@@ -32,6 +32,6 @@ function handleResponse() {
   if (readyState === 4 && status === 200) {
     console.log('res is',res.model);
     console.log('wonder div is', document.querySelector('#wonder'));
-    document.querySelector('#wonder').setAttribute('src', res.model);
+    // document.querySelector('#wonder').setAttribute('src', res.model);
   }
 }
