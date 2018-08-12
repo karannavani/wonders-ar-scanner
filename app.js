@@ -18,7 +18,7 @@ const endPoint = '/wonders';
 const req = new XMLHttpRequest();
 
 
-req.open(verb, `${domain}${endPoint}/5b6f74a5789c303ca4541c58`); // GA
+req.open(verb, `${domain}${endPoint}/5b6f7dc2e539884511a85beb`); // GA
 req.onreadystatechange = handleResponse;
 req.send();
 console.log('req is',req);
@@ -32,6 +32,6 @@ function handleResponse() {
   if (readyState === 4 && status === 200) {
     console.log('res is',res.model);
     console.log('wonder div is', document.querySelector('#wonder'));
-    document.querySelector('#wonder').setAttribute('src', 'scene.gltf');
+    document.querySelector('#wonder').setAttribute('src', res.model);
   }
 }
