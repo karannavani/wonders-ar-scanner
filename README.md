@@ -17,6 +17,8 @@ This is an AR scanner for my Wonders of the World AngularJS project.
 
 * Click on the place marker on the map to reveal an AR marker – scan this marker with the scanner on your phone to see the wonder in Augmented Reality.
 
+<p align="center><img src="https://thumbs.gfycat.com/UnhappyPrestigiousDrake-size_restricted.gif"></p>
+
 ---
 # Technologies Used
 * HTML5
